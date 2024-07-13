@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Números Loteca</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de Números Loteca</h1>
+        <small>Sorteia números para a Loteca. Marque 14 posições e o resto será gerado aleatoriamente.</small>
+
+        <div id="fixed-numbers-selection">
+            <div class="number-selection" id="selection">
+                <h3>Posições Fixas</h3>
+                <label for="fixed-number-1">Posição 1:</label>
+                <select id="fixed-number-1" onchange="validateAndEnableNext(this)">
+                    <option value="">Selecionar</option>
+                    <option value="1">Esquerda</option>
+                    <option value="2">Meio</option>
+                    <option value="3">Direita</option>
+                </select>
+                <br>
+                <label for="fixed-number-2" style="display:none;">Posição 2:</label>
+                <select id="fixed-number-2" style="display:none;" onchange="validateAndEnableNext(this)">
+                    <option value="">Selecionar</option>
+                    <option value="1">Esquerda</option>
+                    <option value="2">Meio</option>
+                    <option value="3">Direita</option>
+                </select>
+                <br>
+                <label for="fixed-number-3" style="display:none;">Posição 3:</label>
+                <select id="fixed-number-3" style="display:none;" onchange="validateAndEnableNext(this)">
+                    <option value="">Selecionar</option>
+                    <option value="1">Esquerda</option>
+                    <option value="2">Meio</option>
+                    <option value="3">Direita</option>
+                </select>
+                <br>
+            </div>
+        </div>
+        
+        <button onclick="generateNumbers()">Gerar Números</button>
+        <button onclick="saveGame()">Salvar Jogo</button>
+        <button onclick="exportToExcel()">Exportar para Excel</button>
+        <div id="generated-numbers" class="numbers-display"></div>
+        <div id="saved-games" class="numbers-display"></div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>
